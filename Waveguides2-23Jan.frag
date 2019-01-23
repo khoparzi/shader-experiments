@@ -1,5 +1,5 @@
 // Author: Khoparzi
-// Title: Waveguides
+// Title: Waveguides2
 
 #ifdef GL_ES
 precision mediump float;

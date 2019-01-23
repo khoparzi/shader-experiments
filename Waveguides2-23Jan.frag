@@ -20,9 +20,9 @@ void main() {
     vec3 color = vec3(0.1);
 
     vec3 pct = vec3(st.x);
-    pct.r = sin(st.x * (u_time/2.0));
-    pct.g = cos(st.x * (u_time/2.0));
-    pct.b = tan(st.x * (u_time/2.0));
+    pct.r = sin(st.x * (u_time * 0.02));
+    pct.g = cos(st.x * (u_time * 0.02));
+    pct.b = tan(st.x * (u_time * 0.02));
 
     // Plot a line
     color = mix(color, vec3(0.13,0.0,0.0), plot(st, pct.r));

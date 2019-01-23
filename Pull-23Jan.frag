@@ -10,7 +10,6 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
-#define PI 3.14159265359
 
 float plot(vec2 st, float pct)
 {
@@ -19,7 +18,7 @@ float plot(vec2 st, float pct)
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    float y = sin(pow(st.x, 5.0) * PI*1010.- + u_time/20.0);
+    float y = sin(pow(st.x, 5.0) * PI*1010.0- + u_time/20.0);
     vec3 color = vec3(y);
     // Plot a line
     float pct = plot(st, y);

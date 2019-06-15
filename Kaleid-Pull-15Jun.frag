@@ -36,13 +36,16 @@ float plot(vec2 st, float pct)
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    st = kaleid(st, 6.);
+
     st = rotate(st, 0., 0.02);
+    st = kaleid(st, 6.);
+
     float y = sin(pow(st.x, 5.0) * PI*1010.0- + u_time/20.0);
     vec3 color = vec3(y);
     // Plot a line
     float pct = plot(st, y);
     color = (1.0 - pct) * color + pct;
+    color = mix(color, vec3(0.4, 0.7, 0.6), st.x);
 
     gl_FragColor = vec4(color,1.0);
 }
